@@ -6,6 +6,7 @@
 
 ARG PYTHON_VERSION=3.10.11
 FROM python:${PYTHON_VERSION}-slim as base
+ENV API_URL=http://example.com/api
 
 # Prevents Python from writing pyc files.
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -46,7 +47,7 @@ COPY . .
 EXPOSE 8000
 
 # Set up the cron job schedule to run every day at 1:30 AM
-RUN echo "30 1 * * * /usr/local/bin/python /app/main.py --url=localhost" > /etc/cron.d/extract-text
+RUN echo "30 1 * * * /usr/local/bin/python /app/main.py --url=$API_URL" > /etc/cron.d/extract-text
 
 # Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/extract-text
