@@ -1,0 +1,7 @@
+requests
+json
+pytesseract
+PIL
+PyPDF2
+fitz
+argparse
