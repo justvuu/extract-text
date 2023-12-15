@@ -18,7 +18,7 @@ RUN apt-get update && apt-get -y install cron
 
 CMD cron \
     && echo "$CRON_SCHEDULE_TIME python /app/main.py --url=$API_URL >> /var/opt/mssql/extract.log" > /etc/cron.d/extract-crontab \
-    && crontab /etc/cron.d/extract-crontab
+    && crontab /etc/cron.d/extract-crontab \
+    && tail /var/opt/mssql/extract.log
 
-ENTRYPOINT tail /var/opt/mssql/extract.log
 
