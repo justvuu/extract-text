@@ -1,4 +1,4 @@
-fitz
+PyMuPDF
 pillow
 PyPDF2
 pytesseract
