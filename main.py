@@ -6,7 +6,6 @@ import PyPDF2
 import fitz
 import argparse
 
-
 def extract_text_from_pdf(pdf_url):
     response = requests.get(pdf_url)
     response.raise_for_status()
