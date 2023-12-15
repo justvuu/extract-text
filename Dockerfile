@@ -2,7 +2,7 @@ FROM python:3.10.11
 
 # Set the API_URL environment variable
 ENV API_URL=http://localhost:5069/api/
-ENV CRON_SCHEDULE_TIME="30 1 * * * TZ="Asia/Ho_Chi_Minh"
+ENV CRON_SCHEDULE_TIME="30 1 * * *"
 
 # Set the working directory
 WORKDIR /app
