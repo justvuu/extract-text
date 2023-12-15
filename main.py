@@ -130,7 +130,6 @@ if __name__ == "__main__":
                     print(f"Updated text for item {item['id']} successfully.")
                 else:
                     print(f"Failed to update text for item {item['id']} with status code {response.status_code}: {response.text}")
-            break
 
         except Exception as e:
             print(f"An error occurred for item {item['id']}: {str(e)}")
