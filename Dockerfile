@@ -16,6 +16,8 @@ RUN pip install -r requirements.txt
 
 RUN apt-get update && apt-get -y install cron
 
+RUN mkdir /var/cronjob/
+
 RUN echo "Extract log" >> /var/log/extract.log
 
 CMD cron \
