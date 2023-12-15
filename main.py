@@ -101,7 +101,7 @@ if __name__ == "__main__":
     url = input_data
     book_ids = get_extract_books()
 
-    if len(book_ids):
+    if len(book_ids) == 0:
         print("No pages need to extract")
 
     page_urls = []
