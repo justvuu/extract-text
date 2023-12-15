@@ -16,9 +16,11 @@ RUN pip install -r requirements.txt
 
 RUN apt-get update && apt-get -y install cron
 
+RUN echo "Extract log" >> /var/log/extract.log
+
 CMD cron \
-    && echo "$CRON_SCHEDULE_TIME python /app/main.py --url=$API_URL >> /var/opt/mssql/extract.log" > /etc/cron.d/extract-crontab \
+    && echo "$CRON_SCHEDULE_TIME python /app/main.py --url=$API_URL >> /var/log/extract.log" > /etc/cron.d/extract-crontab \
     && crontab /etc/cron.d/extract-crontab \
-    && tail -f /var/opt/mssql/extract.log
+    && tail -f /var/log/extract.log
 
 
