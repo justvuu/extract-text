@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.10.11
 
 # Set the API_URL environment variable
 ENV API_URL=http://localhost:5069/api/
